@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <title>Reciclap</title>
+</head>
+<body>
+     <h1>Lista de Usuarios</h1>
+    {% for usuario in usuarios %}
+    <div>
+        
+        <p>Rut: {{ usuario.Rut }}</p>
+        <p>Nombre y Apellido: {{ usuario.PrimerNombre }} {{ usuario.PrimerApellido }} </p>
+        <p>Direccion: {{ usuario.Direccion }}</p>
+        <p>Correo: {{ usuario.Correo }}</p>
+
+        
+    </div>
+{% endfor %}
+
+{% if user.is_authenticated %}
+<a href="{% url 'agregarusuarios.adm' %}"><input type="submit" value="Agregar Usuarios"></a>
+{% else %}
+
+{% endif %}
+    
+</body>
+</html>
